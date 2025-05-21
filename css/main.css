@@ -1,78 +1,56 @@
-/* From Uiverse.io by elijahgummer */ 
-.hole {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-
-i {
-  display: block;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-
-  border-radius: 140px;
-  opacity: 0;
-  animation-name: scale;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+.app {
+  position:relative;
+  height:100svh;
+  background:#050505;
+  overflow:hidden;
+  font-family:"Montserrat",sans-serif;
+  color:#fff;
+  font-size:18px;
 }
-
-i:nth-child(1) {
-  animation-delay: 0.3s;
+.img {
+  position:absolute;
+  bottom:0;
+  max-width:1920px;
+  margin:0 auto;
+  animation:catAnim 1.5s ease forwards;
 }
-
-i:nth-child(2) {
-  animation-delay: 0.6s;
+.img img {
+  display:flex;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
-
-i:nth-child(3) {
-  animation-delay: 0.9s;
-}
-
-i:nth-child(4) {
-  animation-delay: 1.2s;
-}
-
-i:nth-child(5) {
-  animation-delay: 1.5s;
-}
-
-i:nth-child(6) {
-  animation-delay: 1.8s;
-}
-
-i:nth-child(7) {
-  animation-delay: 2.1s;
-}
-
-i:nth-child(8) {
-  animation-delay: 2.4s;
-}
-
-i:nth-child(9) {
-  animation-delay: 2.7s;
-}
-
-i:nth-child(10) {
-  animation-delay: 3s;
-}
-
-@keyframes scale {
+@keyframes catAnim {
   0% {
-    transform: scale(2);
-    opacity: 0;
-    box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
-  }
-  50% {
-    transform: scale(1) translate(0px, -5px);
-    opacity: 1;
-    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.5);
-  }
+  translate:0 50%;
+}
+100% {
+  translate:0 0;
+}
+}.okak {
+  position:absolute;
+  bottom:150px;
+  left:50%;
+  translate:-50% 0;
+  font-weight:900;
+  font-size:115px;
+}
+.error {
+  position:absolute;
+  top:50%;
+  left:50%;
+  font-size:750px;
+  font-weight:900;
+  transform:translate(-50%,800px);
+  animation:errorAnim 1.5s ease forwards;
+}
+@keyframes errorAnim {
   100% {
-    transform: scale(0.1) translate(0px, 5px);
-    opacity: 0;
-    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0);
-  }
+  transform:translate(-50%,-400px);
+}
 }
