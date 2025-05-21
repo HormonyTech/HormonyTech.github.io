@@ -1,85 +1,78 @@
-/* From Uiverse.io by andrew-demchenk0 */ 
-.card {
-  main-color: "#000";
-  submain-color: "#78858F";
-  bg-color: "#fff";
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  position: relative;
-  width: 300px;
-  height: 384px;
+/* From Uiverse.io by elijahgummer */ 
+.hole {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  border-radius: 20px;
-  background: var(bg-color);
-}
-
-.card__img {
-  height: 192px;
-  width: 100%;
-}
-
-.card__img svg {
-  height: 100%;
-  border-radius: 20px 20px 0 0;
-}
-
-.card__avatar {
-  position: absolute;
-  width: 114px;
-  height: 114px;
-  background: var(--bg-color);
-  border-radius: 100%;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  top: calc(50% - 57px);
 }
 
-.card__avatar svg {
-  width: 100px;
-  height: 100px;
+i {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+
+  border-radius: 140px;
+  opacity: 0;
+  animation-name: scale;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-.card__title {
-  margin-top: 60px;
-  font-weight: 500;
-  font-size: 18px;
-  color: var(main-color);
+i:nth-child(1) {
+  animation-delay: 0.3s;
 }
 
-.card__subtitle {
-  margin-top: 10px;
-  font-weight: 400;
-  font-size: 15px;
-  color: var(submain-color);
+i:nth-child(2) {
+  animation-delay: 0.6s;
 }
 
-.card__btn {
-  margin-top: 15px;
-  width: 76px;
-  height: 31px;
-  border: 2px solid var(--main-color);
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 11px;
-  color: var(--main-color);
-  background: var(--bg-color);
-  text-transform: uppercase;
-  transition: all 0.3s;
+i:nth-child(3) {
+  animation-delay: 0.9s;
 }
 
-.card__btn-solid {
-  background: var(--main-color);
-  color: var(--bg-color);
+i:nth-child(4) {
+  animation-delay: 1.2s;
 }
 
-.card__btn:hover {
-  background: var(--main-color);
-  color: var(--bg-color);
+i:nth-child(5) {
+  animation-delay: 1.5s;
 }
 
-.card__btn-solid:hover {
-  background: var(--bg-color);
-  color: var(--main-color);
+i:nth-child(6) {
+  animation-delay: 1.8s;
+}
+
+i:nth-child(7) {
+  animation-delay: 2.1s;
+}
+
+i:nth-child(8) {
+  animation-delay: 2.4s;
+}
+
+i:nth-child(9) {
+  animation-delay: 2.7s;
+}
+
+i:nth-child(10) {
+  animation-delay: 3s;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+    box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    transform: scale(1) translate(0px, -5px);
+    opacity: 1;
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    transform: scale(0.1) translate(0px, 5px);
+    opacity: 0;
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0);
+  }
 }
