@@ -1,92 +1,61 @@
-/* From Uiverse.io by Na3ar-17 */ 
-.radio-input {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.radio-input * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-.radio-input label {
+.container {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 0px 20px;
-  width: 220px;
-  cursor: pointer;
-  height: 50px;
-  position: relative;
-}
-
-.radio-input label::before {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 220px;
-  height: 45px;
-  z-index: -1;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  border-radius: 10px;
-  border: 2px solid transparent;
-}
-.radio-input label:hover::before {
-  transition: all 0.2s ease;
-  background-color: #2a2e3c;
-}
-
-.radio-input .label:has(input:checked)::before {
-  background-color: #2d3750;
-  border-color: #435dd8;
-  height: 50px;
-}
-.radio-input .label .text {
-  color: #fff;
-}
-
-.radio-input .label input[type="radio"] {
-  background-color: #202030;
-  appearance: none;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  display: flex;
   justify-content: center;
+}
+
+.card_box {
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.55);
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.card_box:hover {
+  transform: scale(0.9);
+}
+
+.card_box span {
+  position: absolute;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  top: -10px;
+  left: -10px;
+  display: flex;
   align-items: center;
-}
-.radio-input .label input[type="radio"]:checked {
-  background-color: #435dd8;
-  -webkit-animation: puls 0.7s forwards;
-  animation: pulse 0.7s forwards;
+  justify-content: center;
 }
 
-.radio-input .label input[type="radio"]:before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-color: #fff;
-  transform: scale(0);
+.card_box span::before {
+  content: 'Premium';
+  position: absolute;
+  width: 150%;
+  height: 40px;
+  background-image: linear-gradient(45deg, #ff6547 0%, #ffb144  51%, #ff7053  100%);
+  transform: rotate(-45deg) translateY(-20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.23);
 }
 
-.radio-input .label input[type="radio"]:checked::before {
-  transform: scale(1);
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
+.card_box span::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  bottom: 0;
+  left: 0;
+  height: 10px;
+  z-index: -1;
+  box-shadow: 140px -140px #cc3f47;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
 }
