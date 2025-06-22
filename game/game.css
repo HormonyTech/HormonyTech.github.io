@@ -1,0 +1,99 @@
+/* Стили для игрового экрана */
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.coins-display {
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 1px solid var(--border-color);
+}
+.coins-display i {
+    color: #ffd700;
+    margin-right: 10px;
+}
+#back-to-main-btn {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+}
+.clicker-zone {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.clicker-button {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-color) 0%, #004d6b 100%);
+    border: 5px solid var(--border-color);
+    box-shadow: 0 0 30px var(--glow-color), inset 0 0 20px rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+.clicker-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 15px var(--glow-color), inset 0 0 20px rgba(0,0,0,0.5);
+}
+.click-value-display {
+    margin-top: 15px;
+    font-size: 1.2em;
+    color: #ccc;
+}
+.upgrades-zone {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--primary-color);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+.upgrades-zone h3 { text-align: center; margin-bottom: 15px; color: var(--accent-color); }
+.upgrades-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 25vh;
+    overflow-y: auto;
+}
+.upgrade-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+.upgrade-btn.locked {
+    background-color: #333;
+    color: #777;
+    cursor: not-allowed;
+    border-color: #444;
+}
+.upgrade-btn.locked:hover { box-shadow: none; }
+.upgrade-info { display: flex; flex-direction: column; }
+.upgrade-info strong { font-size: 1em; }
+.upgrade-info span { font-size: 0.8em; color: #aaa; }
+.upgrade-cost { font-weight: bold; }
+.upgrade-cost i { color: #ffd700; }
+
+/* Экран загрузки */
+.loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 2000; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.loader { border: 8px solid #f3f3f3; border-top: 8px solid var(--accent-color); border-radius: 50%; width: 60px; height: 60px; animation: spin 1.5s linear infinite; }
+.loading-overlay p { margin-top: 20px; font-size: 1.2em; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
